@@ -1,0 +1,5 @@
+from sim import add_cube
+
+for i in range(5):
+    t = i / 4
+    add_cube(f"Cube_{i}", [i * 1.2, 0, 0.5], color=(1-t, 0, t))
