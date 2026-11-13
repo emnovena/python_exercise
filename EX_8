@@ -1,0 +1,7 @@
+import numpy as np
+
+def distance(a, b):
+    return np.linalg.norm(a-b)
+
+# Known answer: the 3, 4, 5 right triangle
+print(distance(np.array([0.0, 0.0, 0.0]), np.array([3.0, 4.0, 0.0])))
