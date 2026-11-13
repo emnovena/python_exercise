@@ -1,0 +1,11 @@
+def steps_needed(distance, speed, dt):
+    steps = 0
+    moved = 0
+    # use while: keep moving until you arrive
+    while moved < distance:
+        moved = moved + speed * dt
+        steps = steps + 1
+    return steps
+
+# Known answer: 10 m at 1 m per step takes 10 steps
+print(steps_needed(10, 2, 0.5))
