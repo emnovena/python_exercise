@@ -1,0 +1,21 @@
+import math
+
+class AMR:
+    def __init__(self, name, x, y):
+        self.name = name
+        self.x = x
+        self.y = y
+        self.battery = 100.0
+
+    def drive(self, x, y):
+        distance = math.sqrt((x - self.x) ** 2 + (y - self.y) ** 2)
+        self.battery = self.battery - distance * 0.5
+        self.x = x
+        self.y = y   
+
+    def need_charge(self):
+        return self.battery < 20
+
+car = AMR("AMR_01", 0, 0)
+car.drive(3, 4)
+print(car.x, car.y, car.battery, car.need_charge())
