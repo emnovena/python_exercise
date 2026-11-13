@@ -1,0 +1,7 @@
+import math
+
+x = 3
+y = 4
+
+result = math.sqrt((x * x) + (y * y))
+print(result)
