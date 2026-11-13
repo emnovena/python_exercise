@@ -1,0 +1,11 @@
+from sim import add_cube
+
+for i in range(9):
+    if i % 3 == 0:
+       color = "red"
+    elif i % 3 == 1:
+         color = "green"
+    else:
+         color = "blue"
+         
+add_cube(f"Cube_{i}", [i * 1.2, 0, 0.5], color=color)
