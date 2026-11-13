@@ -1,0 +1,16 @@
+import math
+
+def arrival_times(route, speed):
+    times = [0]
+    t = 0
+    # starting from the second point, work out each leg's time and add it up
+    for i in range(1, len(route)):
+        x0, y0 = route[i - 1]
+        x1, y1 = route[i]
+        length = math.sqrt((x1 - x0) ** 2 + (y1 - y0) ** 2)
+        t = t + length / speed
+        times.append(t)
+    return times
+
+# Known answer: 6 m plus 8 m at speed 2 should be [0, 3.0, 7.0]
+print(arrival_times([[0, 0], [6, 0], [6, 8]], 2))
