@@ -1,0 +1,14 @@
+from sim import add_cube
+
+cubes = [
+    {"name": "Red_Box",   "position": [0, 0, 0.5], "color": "red"},
+    {"name": "Green_Box", "position": [2, 0, 0.5], "color": "green"},
+    {"name": "Blue_Box",  "position": [4, 0, 0.5], "color": "blue"},
+]
+
+# this part has a mistake
+#for c in cubes:
+#   add_cube(c["name"], c["position"], c["color"])
+    
+for c in cubes:
+    add_cube(name=c["name"], position=c["position"], color=c["color"])
