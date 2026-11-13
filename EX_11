@@ -1,0 +1,17 @@
+from sim import add_cube
+
+
+def build_pyramid(levels, size):
+  for k in range(levels):  # k is the level, the bottom is 0
+    n = levels - k  # cubes per side on this level
+    z = size / 2 + k * size
+
+    for row in range(n):
+      for col in range(n):
+        x = (k * size / 2) + (row * size)
+        y = (k * size / 2) + (col * size)
+        add_cube(f"c_{k}_{row}_{col}", [x, y, z], color="blue")
+
+
+build_pyramid(4, 1.0)
+
