@@ -1,0 +1,16 @@
+import math
+
+def pick_vehicle(cars, x, y):
+    ok_cars = [c for c in cars if c["status"] == "idle" and c["battery"] >= 30]
+    if len(ok_cars) == 0: 
+        return None
+        
+    best = min(ok_cars, key=lambda c: math.sqrt((c["x"] - x) ** 2 + (c["y"] - y) ** 2))
+    return best["id"]
+
+cars = [
+    {"id": "AMR_01", "x": 0, "y": 0, "battery": 90, "status": "idle"},
+    {"id": "AMR_02", "x": 8, "y": 0, "battery": 25, "status": "idle"},
+    {"id": "AMR_03", "x": 9, "y": 1, "battery": 70, "status": "busy"},
+]
+print(pick_vehicle(cars, 10, 0)) 
