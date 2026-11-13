@@ -1,0 +1,14 @@
+import json
+
+with open("align.json", encoding="utf-8") as f:
+    cfg = json.load(f)
+
+scene = {"up_axis": 11, "meters_per_unit": 2, "rotation_deg": 5}
+scene["up_axis"] = cfg["up_axis"]
+scene["meters_per_unit"] = cfg["meters_per_unit"]
+scene["rotation_deg"] = cfg["rotation_deg"]
+# put the three values into scene, then write it to scene_config.json
+with open("scene_config.json", "w", encoding="utf-8") as f:
+    json.dump(scene, f, indent=2)
+    
+print()
