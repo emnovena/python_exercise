@@ -1,0 +1,11 @@
+class Cube:
+    def __init__(self, name, position):
+        self.name = name
+        self.position = position
+
+    def move_up (self, dz):
+        self.position[2] = self.position[2] + dz
+
+c = Cube("Test", [0, 0, 0.5])
+c.move_up(1)
+print(c.position) 
