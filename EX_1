@@ -1,0 +1,7 @@
+from sim import add_cube
+
+count = 5
+gap = 2
+
+for i in range(count):
+    add_cube(f"Cube_{i}", [0, i*2, 0.5])
