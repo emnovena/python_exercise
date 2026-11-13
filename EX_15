@@ -1,0 +1,7 @@
+import math
+
+def rotate(x, y, deg):
+    r = math.radians(deg)
+    return [x * math.cos(r) - y * math.sin(r), x * math.sin(r) + y * math.cos(r)]
+# Known answer: (1, 0) rotated 90 degrees should be (0, 1)
+print(rotate(1, 0, 90))
