@@ -1,0 +1,16 @@
+import csv
+
+def load_trips(filename):
+    try:
+        with open(filename, encoding="utf-8") as f:
+            tasks = list(csv.DictReader(f))
+    except FileNotFoundError:
+        return -1
+    total = 0
+    for row in tasks:
+        total = total + int(row["trips_per_day"])
+    return total
+
+print(load_trips("plant_tasks.csv"))
+print(load_trips("missing.csv"))
+
