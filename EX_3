@@ -1,0 +1,5 @@
+def cube_top(z_center, size):
+    return z_center + size / 2 
+
+# Test with a known answer: this line should print 1.0
+print(cube_top(0.5, 1.0))
