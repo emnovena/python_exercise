@@ -1,1 +1,3 @@
-Exercises based on the website: https://claude.ai/artifact/KdiuPPoQwZhFnBJfDqxFDD#home
+<b>Python Cube Lab<b> 
+<br>
+https://claude.ai/artifact/KdiuPPoQwZhFnBJfDqxFDD#home
