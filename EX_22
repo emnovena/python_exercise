@@ -1,0 +1,15 @@
+import math
+from sim import add_line
+
+def to_world(x_mm, y_mm, cfg):
+    # pass   # 1. scale  2. rotate  3. offset
+    xs = x_mm * cfg["scale"]
+    ys = y_mm * cfg["scale"]
+    r = math.radians(cfg["rotation_deg"])
+    xr = xs * math.cos(r) - ys * math.sin(r)     # 2. rotate
+    yr = xs * math.sin(r) + ys * math.cos(r)
+
+    return [xr + cfg["offset"][0], yr + cfg["offset"][1]]
+
+# Known answer: 1000 mm, no rotation, no offset should be [1.0, 2.0]
+print(to_world(1000, 2000, {"scale": 0.001, "rotation_deg": 0, "offset": [0, 0]}))
