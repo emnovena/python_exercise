@@ -1,0 +1,22 @@
+import csv, math
+from sim import add_amr, add_line, set_keyframe
+
+speed = 1.5
+with open("plant_tasks.csv", encoding="utf-8") as f:
+    tasks = list(csv.DictReader(f))
+
+for task in tasks:
+    name = task["task_id"]
+    # 1. get the start and end points, and convert them to float
+    ax, ay = float(task["from_x"]), float(task["from_y"])
+    bx, by = float(task["to_x"]), float(task["to_y"])
+    
+    distance = math.sqrt((bx - ax) ** 2 + (by - ay) ** 2)
+    seconds = distance / speed
+    # 2. draw the route and place the vehicle
+    add_line("Routes/" + name, [[ax, ay, 0], [bx, by, 0]])
+    add_amr("AMR/" + name, [ax, ay, 0.15])
+    # 3. work out the arrival time and set two keyframes
+    set_keyframe("AMR/" + name, 0, [ax, ay, 0.15])
+    set_keyframe("AMR/" + name, seconds, [bx, by, 0.15])
+    
