@@ -1,0 +1,9 @@
+def needs_collider(path):
+    name = path.split("/")[-1]
+    for k in ["Slab", "Beam", "Wall", "Column"]:
+        if k in name:
+            return True
+    return False
+    
+print(needs_collider("/World/Plant3/A1_1FL/Slab_01"))       # True
+print(needs_collider("/World/Slab_Area/AMR_01"))            # False
