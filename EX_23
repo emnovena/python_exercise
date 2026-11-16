@@ -1,0 +1,5 @@
+def video_name(floor, cam, date):
+    # pass   # replace this line with your code
+    return f"plant3_{floor}_cctv{cam:02d}_{date}.mp4"
+print(video_name("1F", 1, "20261105"))
+
